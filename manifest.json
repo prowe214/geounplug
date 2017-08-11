@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Social Unplug",
+  "description": "Blacklist social sites when you enter a geo radius",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "ITS PAUL!!!",
+    "default_popup": "popup.html"
+  },
+  "background": {
+      "scripts": ["checker.js"]
+  },
+  "permissions": [
+    "https://ajax.googleapis.com/",
+    "activeTab",
+    "geolocation",
+    "background",
+    "webRequest",
+    "tabs"
+  ]
+}

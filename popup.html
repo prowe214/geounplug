@@ -1,0 +1,74 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+    <title>Social Unplug</title>
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+        }
+
+        #status {
+            /* avoid an excessively wide status text */
+            white-space: pre;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 400px;
+        }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+    <!-- <script type="text/javascript">
+        (
+        let urls = ["reddit.com", "yahoo.com"];
+        chrome.webRequest.onBeforeRequest.addListener(
+            function(info) {
+                console.log("Cat intercepted: " + info);
+                // Redirect the lolcal request to a random loldog URL.
+                var i = Math.round(Math.random() * loldogs.length);
+                return {
+                    redirectUrl: "https://www.bloomberg.com/404"
+                };
+            },
+            // filters
+            {
+                urls: [
+                    "https://i.chzbgr.com/*"
+                ],
+                types: ["image"]
+            },
+            // extraInfoSpec
+            ["blocking"]);
+        )();
+    </script> -->
+</head>
+
+<body>
+    <h1>
+          Social Unplugged
+    </h1>
+    <div>
+        NOT CURRENTLY BLOCKING
+    </div>
+    <div>
+        <h2>Blacklist another site</h2>
+        <form action="./data.json" method="POST">
+            <input name="url" placeholder="URL..." type="text">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</body>
+
+</html>
